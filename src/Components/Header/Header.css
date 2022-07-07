@@ -5,6 +5,13 @@ header {
   background-color: black;
 }
 
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
 img {
   width: 10%;
 }

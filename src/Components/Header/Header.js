@@ -3,8 +3,9 @@ import logo from "../../assets/logo.jpg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Header.css";
 import CartWidget from "../CartWidget";
+import { NavLink } from "react-router-dom";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header>
       <img src={logo} alt="" />
@@ -16,15 +17,35 @@ const Header = () => {
       ></link>
 
       <h1>RainoSolutions</h1>
-      <nav>
-        <a href="">Inicio</a>
-        <a href="">Nosotros</a>
-        <a href="">Contacto</a>
-        <a href="">Productos</a>
-        <a href="">
-          <CartWidget />
-        </a>
-      </nav>
+      <div className="container">
+        <nav className="nav">
+          <div className="nav__brand">
+            <NavLink className="nav__link" to="/">
+              Inicio
+            </NavLink>
+          </div>
+          <ul className="nav__list">
+            <li>
+              <NavLink className="nav__link" to="/categoria/electronicalocal">
+                Productos Nacionales
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="nav__link"
+                to="/categoria/electronicaimportada"
+              >
+                Productos Importados
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nav__link" to="/cart">
+                <CartWidget />
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <ShoppingCartIcon color="action" fontSize="large" />
     </header>
   );
