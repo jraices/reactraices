@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail";
+import { getData } from "../../api/database";
 
-const films = {
-  id: 1,
-  image: "https://proyecto101.com/wp-content/uploads/2019/08/i7_2.jpg",
-  title: "Auricular i7",
-};
 
 export const ItemDetailContainer = () => {
-  const [data, setData] = useState({});
+  const [dataDetail, setDataDetail] = useState({});
+  const {id} = useParams();
+
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(films);
-      }, 3000);
-    });
 
-    getData.then((res) => setData(res));
-  }, []);
+    getData
+    .then((res)=>setDataDetail(res.find((e)=>e.id === Number(id))))
+    .catch((err)=>console.log(err))
 
-  return <ItemDetail data={data} />;
+  }, [id]);
+
+  return (
+    <>
+          <ItemDetail dataDetail={dataDetail}/> 
+    </>
+  ) 
 };
 
 export default ItemDetailContainer;

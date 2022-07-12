@@ -1,16 +1,28 @@
 import React from "react";
+import ItemCount from "../ItemCount";
 
-export const ItemDetail = ({ data }) => {
+export const ItemDetail = ({ dataDetail}) => {
+
+  const onAdd = () => {
+    console.log("Agregaste 1 elemento al carrito")
+  }
+
   return (
-    <div className="container">
-      <div className="detail">
-        <img className="detail__image" src={data.image} alt="" />
-        <div className="content">
-          <h1>{data.title} </h1>
-        </div>
-      </div>
+    <div>
+         <div className="container">
+            <div className="detail">
+                <div className="content">
+                   <p>{dataDetail.title} </p>
+                  <p>{dataDetail.category}</p>
+                </div>
+                <img className="detail__image" src={dataDetail.image} alt="" />
+            </div>
+            <div>
+            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            </div>
+          </div>  
     </div>
-  );
+  )
 };
 
 export default ItemDetail;

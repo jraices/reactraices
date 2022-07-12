@@ -1,9 +1,16 @@
-import Item from "../Item";
+import Item from "../Item/item";
 
 import React from "react";
 
-const ItemList = ({ data = [] }) => {
-  return data.map((film) => <Item key={film.id} info={film} />);
+const ItemList = ({ data }) => {
+
+  return (
+    <>
+      {
+        data?.map((e) => <Item key={e.id} info={e} />)
+      }
+    </>
+    )
 };
 
 export default ItemList;

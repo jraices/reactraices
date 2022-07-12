@@ -13,18 +13,16 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Header />;
+        <Header />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route
             path="/categoria/:categoriaId"
             element={<ItemListContainer />}
           />
+          <Route path="/item/:id"  element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartWidget />} />
-          <Route path="/detalle" element={<ItemDetailContainer />} />
         </Routes>
-        <ItemListContainer />
-        <ItemDetailContainer />
       </BrowserRouter>
     </>
   );
