@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import Title from "../Title";
 import ItemList from "../ItemList";
 import { useInsertionEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getData } from "../../api/database";
-
-
 
 export const ItemListContainer = () => {
   const [data, setData] = useState([]);
@@ -13,13 +18,25 @@ export const ItemListContainer = () => {
   const { categoriaId } = useParams();
 
   useEffect(() => {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "products");
 
     if (categoriaId) {
-      console.log("Data itemlist preset:", data)
-      getData.then((res) => setData(res.filter((e) => e.category === categoriaId)));
-      console.log("Data itemlist postset:", data)
+      const queryFilter = query(
+        queryCollection,
+        where("category", "==", categoriaId)
+      );
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
+      );
     } else {
-      getData.then((res) => setData(res));
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
+      );
     }
   }, [categoriaId]);
 
