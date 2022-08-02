@@ -6,7 +6,7 @@ header {
 }
 
 li {
-  display: flex;
+  display: inline-table;
   justify-content: space-between;
   align-items: center;
   background-color: black;

@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Entrega Final React - Raices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tienda De Eletronica
 
-## Available Scripts
+## RainoSolutions
 
-In the project directory, you can run:
+A continuacion detallare el paso a paso de mi proyecto de Ecommerce en la plataforma React JS.
 
-### `npm start`
+El paso a paso y las distintas herramientas que utilice.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ## 1- Crear proyecto de react y subirlo a github.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> **En este primer paso, instale React JS con su apariencia basica. Usando los git y los comandos git add, git commit y git push subi mi repositorio a Github**
 
-### `npm test`
+![Texto](<./public/12%20(1).jpg>)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ## 2- Crear componente NavBar y organizar archivos correspondientes
 
-### `npm run build`
+> **Aqui le emepece a dar forma al proyecto, utlizando la carpeta components para empezar a alojar los distintos items de mi Ecommerce**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Texto](./reactraices/public/WhatsApp%20Image%202022-08-02%20at%204.01.36%20PM.jpeg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **Tuve algunos problemas ya que en vez de usar como NavBar use el archivo como Header.js, luego pude solucionarlo.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ## 3- Crear componente CartWidget y utilizar icono para el carrito de compras.
 
-### `npm run eject`
+> **Dentro de CartWidget aplique la herramienta bootstrap para el icono del mi carrito y utilice las etiquetas para poder moverme entre los distintos filtros de mi barra de navegacion, tal cual se ve en la imagen anterior, esta parte no me ocasiono mayor problema**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ## 4- Crear contador con boton.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> **En este paso se creo el ItemCount, en el mismo se setea la cantidad de productos que luego seran ingresados al carro para la compra, entiendo como se utiliza el useState**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Texto](./public/WhatsApp%20Image%202022-08-02%20at%204.56.03%20PM.jpeg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ## 5- Mostrar productos con promise
 
-## Learn More
+> **Aqui emepece a mostrar los productos de mi Ecommerce simunlando que la traia de una base de datos, creando el componente item y el itemListContainer quien el que contiene toda la logica, la idea no era mostrar el producto sino setearlo, creando la nueva promesa**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ## 6- Detalle del producto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> **Similar al paso anterior, pero ahora seteando el detalle del producto, creando el componente itemDetail, aun simulando que traemos ese producto de una base de datos**
 
-### Code Splitting
+![Texto](./public/WhatsApp%20Image%202022-08-02%20at%205.11.16%20PM.jpeg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ## 7- Realizar el routing de mi Ecommerce
 
-### Analyzing the Bundle Size
+> **Aqui se creo la ruta para poder ir a las distintas categorias dentro del Ecommerse, crear las rutas y con los enlaces nos lleven a esas rutas que creamos, para eso instalar el React Router DOM, y mostrar todos los detalles que requiera. Creando el ambito donde se va a poder utilizar**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ## 8- Sincronizacion del Counter
 
-### Making a Progressive Web App
+> **El contador tenia que encontrarse en cada detalle de cada producto para que luego nos aparezcae el boton de terminar compra utilizando la etiqueta Link y nos lleve al Cart**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Texto](./public/WhatsApp%20Image%202022-08-02%20at%205.53.33%20PM.jpeg)
 
-### Advanced Configuration
+- ## 9- Cart View
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> **Luego de usar la tecnica de renderizado, en caso de no tener productos en el Cart se renderiza un texto que te lleva a que realices las compras, tambien en el CartWidget la cantidad de productos que compraste**
 
-### Deployment
+- ## 10- Incoporando Firebase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> **Este fue quizas el paso mas tedioso, ya que luego no me tomaba los productos de la base de datos ya que no lograba comunicarme con el FireStore, basicamente abri el usuario estableci cada documento con sus distintas categorias, previo a esto obviamente instale Firebase con el npm install junto con todos sus componentes para luego crear la logica del mismo**
 
-### `npm run build` fails to minify
+![Texto](./public/WhatsApp%20Image%202022-08-02%20at%206.05.35%20PM.jpeg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ## 11- Cargando una OC con FireStore
+
+> **Finalmente tomar cualquier producto, cargarlos en el carrito para luego emitir una OC que se reflejara en un documento establcido llamado Order que por medio de un link podremos visuzalizar en la base de datos**
+
+- ## 12- Gif del proceso de mi Ecommese
+
+![Texto](./public/GIFRaices.gif)
